@@ -1,0 +1,9 @@
+spec_version: "0.1.0"
+name: property-maintenance-triage-agent
+version: 1.0.0
+description: Classifies property maintenance requests, flags safety concerns, and recommends routing and response priority.
+author: Janice Benita F
+runtime:
+  max_turns: 20
+  timeout: 120
+tags: [real-estate, maintenance, triage, safety]

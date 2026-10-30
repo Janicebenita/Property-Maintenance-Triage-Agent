@@ -22,6 +22,6 @@ Uncertainty is emphasized whenever evidence is incomplete or a hazard is possibl
 
 ## Implementation in This Repository
 
-This repository implements the worker as a declarative OpenGAP package. `agent.yaml` specifies maintenance-report inputs and a review-oriented triage output, `SOUL.md` defines emergency and human-approval constraints, and this file documents the evidence and uncertainty model; `README.md` supplies usage context.
+`agent.py` implements `triage_request(request)`. It matches the supplied category and description against explicit emergency and urgent term sets, selects emergency/urgent/routine priority, routes emergencies to local emergency procedures, retains the matched terms and original text as evidence, returns no diagnosis, never authorizes repair, and requires human assessment. `test_agent.py` verifies the gas-leak emergency route and repair guardrail.
 
-There is no sensor feed, contractor dispatch, or repair-authorization integration in the repository. A compatible host must expose uncertainty and possible hazards, direct emergencies to local procedures, and leave diagnosis and dispatch to qualified humans.
+There is no sensor feed, contractor dispatch, or repair-authorization integration. Diagnosis and dispatch remain with qualified humans.
